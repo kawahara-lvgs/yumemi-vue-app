@@ -120,7 +120,7 @@ onMounted(() => {
       </div>
     </template>
   </div>
-  <div>
+  <div class="line-chart">
     <LineChart :data="data" />
   </div>
 </template>
@@ -128,10 +128,15 @@ onMounted(() => {
 <style scoped lang="scss">
 .pref-list {
   display: grid;
-  grid-template-columns: repeat(auto-fit, 140px);
+  grid-template-columns: repeat(auto-fit, 6em);
+  text-align: left;
   .item {
-    padding: 5px 10px;
+    padding: 10px 0;
   }
+}
 
+.line-chart {
+  height: 60vh;
+  margin-top: 20px;
 }
 </style>
