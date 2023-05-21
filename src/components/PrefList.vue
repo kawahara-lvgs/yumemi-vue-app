@@ -2,7 +2,6 @@
 import { computed, onMounted, ref } from 'vue'
 import LineChart from './LineChart.vue'
 import PrefApi from '../repositories/prefApiRepository'
-import type { ChartData } from 'chart.js'
 
 type prefPerYearResult = {
   label: string
@@ -86,8 +85,12 @@ const getPrefPerYear = async (id:string, name:string) => {
   }
 }
 
-const data:ChartData<'line'> = computed(() => {
-  const dataset = chartData.value.map(_ => {
+const data = computed(() => {
+  const dataset:{
+    label: string
+    data: number[]
+    borderColor: string
+  }[] = chartData.value.map(_ => {
     return {
       label: _.prefName,
       data: _.prefPerList,
