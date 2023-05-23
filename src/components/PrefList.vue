@@ -36,6 +36,7 @@ const chartData = ref<{
   prefPerList: number[]
   borderColor: string
 }[]>([])
+// テストコメントs
 
 const borderColorList= [
   'rgba(255, 99, 132, 1)',
